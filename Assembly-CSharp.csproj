@@ -57,12 +57,15 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Sign.cs" />
     <Compile Include="Assets\Scripts\RoomMove.cs" />
+    <Compile Include="Assets\Scripts\KnockBack.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\Pot.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
-    <Compile Include="Assets\Scripts\PlayerHit.cs" />
-    <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\Log.cs" />
+    <Compile Include="Assets\Scripts\PlayerHit.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\FloatValue.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\IntValue.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

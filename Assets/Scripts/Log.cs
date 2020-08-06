@@ -8,13 +8,18 @@ public class Log : Enemy
     public float chaseRadius;
     public float attackRadius;
     public Transform homePosition;
+    Rigidbody2D myRigidbody2D;
+    public Animator anim;
 
     void Start()
     {
+        currentState = EnemyState.idle;
+        myRigidbody2D = GetComponent<Rigidbody2D>();
         target = GameObject.FindWithTag("Player").transform;
+        anim = GetComponent<Animator>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         CheckDistance();
     }
@@ -23,7 +28,64 @@ public class Log : Enemy
     {
         if (Vector3.Distance(target.position, transform.position) <= chaseRadius && Vector3.Distance(target.position, transform.position) > attackRadius)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+            anim.SetBool("attackAble", false);
+            ChangeState(EnemyState.walk);
+            if (currentState == EnemyState.idle || currentState == EnemyState.walk)
+            {
+                ChangeState(EnemyState.walk);
+                anim.SetBool("wakeUp", true);
+                Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+                ChangeAnim(temp - transform.position);
+                myRigidbody2D.MovePosition(temp);
+            }
         }
+        else if (Vector3.Distance(target.position, transform.position) <= attackRadius)
+        {
+            ChangeState(EnemyState.attack);
+            anim.SetBool("attackAble", true);
+        }
+        else if (Vector3.Distance(target.position, transform.position) > chaseRadius)
+        {
+            ChangeState(EnemyState.idle);
+            anim.SetBool("wakeUp", false);
+        }
+    }
+
+    private void SetAnimFloat(Vector2 setVector)
+    {
+        anim.SetFloat("moveX", setVector.x);
+        anim.SetFloat("moveY", setVector.y);
+    }
+
+    private void ChangeAnim(Vector2 direction)
+    {
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+        {
+            if (direction.x > 0)
+            {
+                SetAnimFloat(Vector2.right);
+            }
+            else if (direction.x < 0)
+            {
+                SetAnimFloat(Vector2.left);
+            }
+        }
+        else if (Mathf.Abs(direction.x) < Mathf.Abs(direction.y))
+        {
+            if (direction.y > 0)
+            {
+                SetAnimFloat(Vector2.up);
+            }
+            else if (direction.y < 0)
+            {
+                SetAnimFloat(Vector2.down);
+            }
+        }
+    }
+
+    void ChangeState(EnemyState newState)
+    {
+        if (currentState != newState)
+            currentState = newState;
     }
 }
