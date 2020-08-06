@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D myRigidbody;
     private Vector3 change;
     private Animator animator;
+    public IntValue currentHealth;
+    public Signal playerHealthSignal; 
 
     // Start is called before the first frame update
     void Start()
@@ -91,6 +93,16 @@ public class PlayerMovement : MonoBehaviour
             yield return new WaitForSeconds(knockTime);
             myRigidbody.velocity = Vector2.zero;
             currentState = PlayerState.idle;
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth.initialValue -= damage;
+        if (currentHealth.initialValue < 0)
+        {
+            playerHealthSignal.Raise();
+            Debug.Log("Player Dead!");
         }
     }
 }
