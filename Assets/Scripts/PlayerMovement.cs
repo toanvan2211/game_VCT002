@@ -19,7 +19,10 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 change;
     private Animator animator;
     public IntValue currentHealth;
-    public Signal playerHealthSignal; 
+    public Signal playerHealthSignal;
+
+    public int power;
+
 
     // Start is called before the first frame update
     void Start()
@@ -98,11 +101,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth.initialValue -= damage;
-        if (currentHealth.initialValue < 0)
+        currentHealth.RuntimeValue -= damage;
+        playerHealthSignal.Raise();
+        if (currentHealth.RuntimeValue <= 0)
         {
-            playerHealthSignal.Raise();
-            Debug.Log("Player Dead!");
+            this.gameObject.SetActive(false);
         }
     }
 }

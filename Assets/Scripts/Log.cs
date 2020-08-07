@@ -10,6 +10,7 @@ public class Log : Enemy
     public Transform homePosition;
     Rigidbody2D myRigidbody2D;
     public Animator anim;
+    public float attackSpeed;
 
     void Start()
     {
@@ -41,14 +42,26 @@ public class Log : Enemy
         }
         else if (Vector3.Distance(target.position, transform.position) <= attackRadius)
         {
-            ChangeState(EnemyState.attack);
-            anim.SetBool("attackAble", true);
+            if (currentState != EnemyState.attacking)
+            {
+                ChangeState(EnemyState.attack);
+                anim.SetBool("attackAble", true);
+                StartCoroutine(Attack(baseAttack));
+            }
         }
         else if (Vector3.Distance(target.position, transform.position) > chaseRadius)
         {
             ChangeState(EnemyState.idle);
             anim.SetBool("wakeUp", false);
         }
+    }
+
+    private IEnumerator Attack(int damage)
+    {
+        target.GetComponent<PlayerMovement>().TakeDamage(damage);
+        currentState = EnemyState.attacking;
+        yield return new WaitForSeconds(attackSpeed);
+        currentState = EnemyState.attack;
     }
 
     private void SetAnimFloat(Vector2 setVector)

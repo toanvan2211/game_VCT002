@@ -14,10 +14,11 @@ public class KnockBack : MonoBehaviour
         {
             Rigidbody2D enemy = other.GetComponent<Rigidbody2D>();
             {
-                if (other.gameObject.CompareTag("Player"))
-                {
-                    other.GetComponent<PlayerMovement>().TakeDamage(damage);
-                }
+                //if (other.gameObject.CompareTag("Player"))
+                //{
+                //    if (this.GetComponent<Enemy>().currentState != EnemyState.attacking)
+                //        other.GetComponent<PlayerMovement>().TakeDamage(damage);
+                //}
                 
                 if (other.gameObject.CompareTag("enemy") && other.isTrigger)
                 {

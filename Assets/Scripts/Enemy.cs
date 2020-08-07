@@ -7,6 +7,7 @@ public enum EnemyState
     idle,
     walk,
     attack,
+    attacking,
     stagger
 }
 
