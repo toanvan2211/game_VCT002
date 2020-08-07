@@ -13,14 +13,15 @@ public class KnockBack : MonoBehaviour
         if (other.gameObject.CompareTag("enemy") || other.gameObject.CompareTag("Player"))
         {
             Rigidbody2D enemy = other.GetComponent<Rigidbody2D>();
+            //if (other.gameObject.CompareTag("Player"))
+            //{
+            //    if (this.GetComponent<Enemy>().currentState != EnemyState.attacking)
+            //        other.GetComponent<PlayerMovement>().TakeDamage(damage);
+            //}
+
+            if (other.gameObject.CompareTag("enemy") && other.isTrigger)
             {
-                //if (other.gameObject.CompareTag("Player"))
-                //{
-                //    if (this.GetComponent<Enemy>().currentState != EnemyState.attacking)
-                //        other.GetComponent<PlayerMovement>().TakeDamage(damage);
-                //}
-                
-                if (other.gameObject.CompareTag("enemy") && other.isTrigger)
+                if (!this.gameObject.CompareTag("enemy"))
                 {
                     other.GetComponent<Enemy>().currentState = EnemyState.stagger;
                     other.GetComponent<Enemy>().Knock(enemy, knockTime, damage);

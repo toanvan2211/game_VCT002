@@ -19,7 +19,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 change;
     private Animator animator;
     public IntValue currentHealth;
-    public Signal playerHealthSignal;
+    public TheSignal playerHealthSignal;
+    public Transform revivePosition;
 
     public int power;
 
@@ -105,7 +106,14 @@ public class PlayerMovement : MonoBehaviour
         playerHealthSignal.Raise();
         if (currentHealth.RuntimeValue <= 0)
         {
-            this.gameObject.SetActive(false);
+            Revive();
         }
+    }
+
+    public void Revive()
+    {
+        this.transform.position = revivePosition.transform.position;
+        currentHealth.RuntimeValue = currentHealth.initialValue;
+        playerHealthSignal.Raise();
     }
 }

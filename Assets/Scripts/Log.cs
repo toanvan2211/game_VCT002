@@ -16,51 +16,61 @@ public class Log : Enemy
     {
         currentState = EnemyState.idle;
         myRigidbody2D = GetComponent<Rigidbody2D>();
-        target = GameObject.FindWithTag("Player").transform;
         anim = GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
-        CheckDistance();
+        if (target != null)
+            LogAction();
+        else
+            SetTarget();
     }
 
-    void CheckDistance()
+    void SetTarget()
     {
-        if (Vector3.Distance(target.position, transform.position) <= chaseRadius && Vector3.Distance(target.position, transform.position) > attackRadius)
+        Transform tempTrans = GameObject.FindWithTag("Player").transform;
+        if (Vector3.Distance(tempTrans.position, transform.position) <= chaseRadius)
+            target = tempTrans;
+    }
+
+    void LogAction()
+    {
+        if (currentState != EnemyState.attacking)
         {
-            anim.SetBool("attackAble", false);
-            ChangeState(EnemyState.walk);
-            if (currentState == EnemyState.idle || currentState == EnemyState.walk)
+            if (Vector3.Distance(target.position, transform.position) <= chaseRadius && Vector3.Distance(target.position, transform.position) > attackRadius)
             {
+                anim.SetBool("attackAble", false);
                 ChangeState(EnemyState.walk);
-                anim.SetBool("wakeUp", true);
-                Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
-                ChangeAnim(temp - transform.position);
-                myRigidbody2D.MovePosition(temp);
+                if (currentState == EnemyState.idle || currentState == EnemyState.walk)
+                {
+                    ChangeState(EnemyState.walk);
+                    anim.SetBool("wakeUp", true);
+                    Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+                    ChangeAnim(temp - transform.position);
+                    myRigidbody2D.MovePosition(temp);
+                }
             }
-        }
-        else if (Vector3.Distance(target.position, transform.position) <= attackRadius)
-        {
-            if (currentState != EnemyState.attacking)
+            else if (Vector3.Distance(target.position, transform.position) <= attackRadius)
             {
-                ChangeState(EnemyState.attack);
                 anim.SetBool("attackAble", true);
                 StartCoroutine(Attack(baseAttack));
             }
-        }
-        else if (Vector3.Distance(target.position, transform.position) > chaseRadius)
-        {
-            ChangeState(EnemyState.idle);
-            anim.SetBool("wakeUp", false);
+            else if (Vector3.Distance(target.position, transform.position) > chaseRadius)
+            {
+                ChangeState(EnemyState.idle);
+                anim.SetBool("wakeUp", false);
+                anim.SetBool("attackAble", false);
+                target = null;
+            }
         }
     }
 
     private IEnumerator Attack(int damage)
     {
-        target.GetComponent<PlayerMovement>().TakeDamage(damage);
         currentState = EnemyState.attacking;
         yield return new WaitForSeconds(attackSpeed);
+        target.GetComponent<PlayerMovement>().TakeDamage(damage);
         currentState = EnemyState.attack;
     }
 
