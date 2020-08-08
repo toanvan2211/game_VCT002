@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Sign : MonoBehaviour
 {
+    public TheSignal contextOn;
+    public TheSignal contextOff;
     public bool playerInRange;
     public GameObject dialogBox;
     public Text dialogText;
@@ -33,16 +35,18 @@ public class Sign : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !other.isTrigger)
         {
+            contextOn.Raise();
             playerInRange = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !other.isTrigger)
         {
+            contextOff.Raise();
             playerInRange = false;
             dialogBox.SetActive(false);
         }
