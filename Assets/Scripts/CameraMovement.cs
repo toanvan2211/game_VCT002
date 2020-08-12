@@ -8,6 +8,8 @@ public class CameraMovement : MonoBehaviour
     public float smoothing;
     public Vector2 maxPosition;
     public Vector2 minPosition;
+    public VectorValue defaultMaxPosition;
+    public VectorValue defaultMinPosition;
 
     void Start()
     {
@@ -23,5 +25,11 @@ public class CameraMovement : MonoBehaviour
             targetPosition.y = Mathf.Clamp(targetPosition.y, minPosition.y, maxPosition.y);
             transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing);
         }
+    }
+
+    public void SetDefautMaxMinPosition()
+    {
+        maxPosition = defaultMaxPosition.defaultValue;
+        minPosition = defaultMinPosition.defaultValue;
     }
 }

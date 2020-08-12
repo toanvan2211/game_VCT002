@@ -43,7 +43,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 575331c09cc4f5a4091dd759eac8e0ba, type: 3}
-    totalSpriteSurfaceArea: 786716
+    totalSpriteSurfaceArea: 787009
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -1139,6 +1139,7 @@ SpriteAtlas:
   - {fileID: -6960371683831875272, guid: 437e7862f12c93343b4e9a2204028ed1, type: 3}
   - {fileID: 6469460937200175538, guid: 437e7862f12c93343b4e9a2204028ed1, type: 3}
   - {fileID: 2924928888349640390, guid: 437e7862f12c93343b4e9a2204028ed1, type: 3}
+  - {fileID: 21300000, guid: d1dcd6177aa1d344b89505645d93a53b, type: 3}
   - {fileID: -790699523677361007, guid: 18eac6c76eec7d44dbfea9e0a3b9fa70, type: 3}
   - {fileID: 8470420716495695676, guid: 18eac6c76eec7d44dbfea9e0a3b9fa70, type: 3}
   - {fileID: 6167071470516247665, guid: 18eac6c76eec7d44dbfea9e0a3b9fa70, type: 3}
@@ -2745,6 +2746,7 @@ SpriteAtlas:
   - Overworld_623
   - Overworld_673
   - Overworld_129
+  - key
   - character_14
   - character_15
   - character_16
