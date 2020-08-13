@@ -13,20 +13,26 @@ public enum PlayerState
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("State")]
     public PlayerState currentState;
     public float speed;
     private Rigidbody2D myRigidbody;
     private Vector3 change;
     private Animator animator;
     public IntValue currentHealth;
-    public TheSignal playerHealthSignal;
+    public Inventory playerInventory;
+    public int power;
+    public GameObject attackEffect;
+
+    [Header("Position Variables")]
     public Transform revivePosition;
     public VectorValue startingPosition;
-    public Inventory playerInventory;
     public SpriteRenderer receiveItemSprite;
+
+    [Header("Signal")]
+    public TheSignal playerHealthSignal;
     public TheSignal reviveSignal;
 
-    public int power;
 
 
     // Start is called before the first frame update
@@ -37,7 +43,8 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.SetFloat("moveX", 0);
         animator.SetFloat("moveY", -1);
-        transform.position = startingPosition.initialValue;
+        if (startingPosition != null)
+            transform.position = startingPosition.initialValue;
     }
 
     // Update is called once per frame
@@ -78,7 +85,16 @@ public class PlayerMovement : MonoBehaviour
                 receiveItemSprite.sprite = null;
                 playerInventory.currentItem = null;
             }
-        }        
+        }
+    }
+
+    private void AttackEffect()
+    {
+        if (attackEffect != null)
+        {
+            GameObject effect = Instantiate(attackEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 1f);
+        }
     }
 
     private IEnumerator AttackCo()
@@ -89,8 +105,10 @@ public class PlayerMovement : MonoBehaviour
             currentState = PlayerState.attack;
             yield return null;
             animator.SetBool("attacking", false);
+            AttackEffect();
             yield return new WaitForSeconds(.33f);
-            currentState = PlayerState.idle;
+            if (currentState != PlayerState.interact)
+                currentState = PlayerState.idle;
         }
     }
 
@@ -145,9 +163,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void Revive()
     {
-        this.transform.position = revivePosition.transform.position;
-        currentHealth.RuntimeValue = currentHealth.initialValue;
-        playerHealthSignal.Raise();
-        reviveSignal.Raise();
+        if (revivePosition != null)
+        {
+            this.transform.position = revivePosition.transform.position;
+            currentHealth.RuntimeValue = currentHealth.initialValue;
+            playerHealthSignal.Raise();
+            reviveSignal.Raise();
+        }
     }
 }

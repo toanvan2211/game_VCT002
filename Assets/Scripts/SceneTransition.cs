@@ -23,7 +23,7 @@ public class SceneTransition : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player") && !other.isTrigger)
+        if (other.gameObject.CompareTag("Player") && !other.isTrigger && !string.IsNullOrEmpty(sceneToLoad))
         {
             playerStorage.initialValue = playerPosition;
             //SceneManager.LoadScene(sceneToLoad);

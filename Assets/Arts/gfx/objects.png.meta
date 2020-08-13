@@ -67,7 +67,7 @@ TextureImporter:
     second: objects_20
   - first:
       213: -6883905864151536645
-    second: objects_21
+    second: leaf effect 2
   - first:
       213: 7206194005228167239
     second: objects_22
@@ -325,52 +325,52 @@ TextureImporter:
     second: objects_106
   - first:
       213: -2955328036293922735
-    second: objects_107
+    second: tree animation 1
   - first:
       213: -377563455374678323
-    second: objects_108
+    second: tree animation 2
   - first:
       213: 1107736971085435061
     second: objects_109
   - first:
       213: -1991825025733801836
-    second: objects_110
+    second: tree animation 4
   - first:
       213: 4546686275956030081
-    second: objects_111
+    second: tree animation 5
   - first:
       213: -5354328968874661603
-    second: objects_112
+    second: tree animation 6
   - first:
       213: -8223264963939097379
-    second: objects_113
+    second: tree animation 7
   - first:
       213: 6974221507388985145
-    second: objects_114
+    second: tree animation 8
   - first:
       213: 2487486484330169583
-    second: objects_115
+    second: tree animation 9
   - first:
       213: -108185186312894436
-    second: objects_116
+    second: tree animation 10
   - first:
       213: 2346192434483656938
-    second: objects_117
+    second: tree animation 11
   - first:
       213: -595281427602211305
-    second: objects_118
+    second: tree animation 12
   - first:
       213: 538826285080647454
-    second: objects_119
+    second: tree animation 13
   - first:
       213: 228074669703589773
-    second: objects_120
+    second: tree animation 14
   - first:
       213: 8626818278983215672
-    second: objects_121
+    second: tree animation 15
   - first:
       213: -1760756981417539202
-    second: objects_122
+    second: tree animation 16
   - first:
       213: -3855957774892257989
     second: objects_123
@@ -434,6 +434,21 @@ TextureImporter:
   - first:
       213: 4466388144430246088
     second: pot_5
+  - first:
+      213: 4695374288273231278
+    second: leaf effect 1
+  - first:
+      213: 5933575259166601856
+    second: leaf effect 3
+  - first:
+      213: 5820556885017641329
+    second: leaf effect 4
+  - first:
+      213: -4075620430031724872
+    second: tree animation 3
+  - first:
+      213: -8109198643628229234
+    second: tree animation 17
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -974,13 +989,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_21
+      name: leaf effect 2
       rect:
         serializedVersion: 2
-        x: 71
-        y: 284
-        width: 14
-        height: 12
+        x: 94
+        y: 272
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2780,13 +2795,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_107
+      name: tree animation 1
       rect:
         serializedVersion: 2
-        x: 1
-        y: 129
-        width: 31
-        height: 26
+        x: 0
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2801,13 +2816,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_108
+      name: tree animation 2
       rect:
         serializedVersion: 2
-        x: 33
-        y: 129
-        width: 31
-        height: 26
+        x: 32
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2825,10 +2840,10 @@ TextureImporter:
       name: objects_109
       rect:
         serializedVersion: 2
-        x: 65
+        x: 32
         y: 129
-        width: 31
-        height: 26
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2843,13 +2858,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_110
+      name: tree animation 4
       rect:
         serializedVersion: 2
-        x: 97
-        y: 127
-        width: 31
-        height: 28
+        x: 96
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2864,13 +2879,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_111
+      name: tree animation 5
       rect:
         serializedVersion: 2
-        x: 129
-        y: 129
-        width: 31
-        height: 26
+        x: 128
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2885,13 +2900,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_112
+      name: tree animation 6
       rect:
         serializedVersion: 2
-        x: 161
-        y: 129
-        width: 31
-        height: 26
+        x: 160
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2906,13 +2921,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_113
+      name: tree animation 7
       rect:
         serializedVersion: 2
-        x: 193
-        y: 129
-        width: 31
-        height: 26
+        x: 192
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2927,13 +2942,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_114
+      name: tree animation 8
       rect:
         serializedVersion: 2
-        x: 225
-        y: 129
-        width: 31
-        height: 26
+        x: 224
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2948,13 +2963,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_115
+      name: tree animation 9
       rect:
         serializedVersion: 2
-        x: 1
-        y: 97
-        width: 31
-        height: 26
+        x: 0
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2969,13 +2984,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_116
+      name: tree animation 10
       rect:
         serializedVersion: 2
-        x: 33
-        y: 97
-        width: 31
-        height: 26
+        x: 32
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2990,13 +3005,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_117
+      name: tree animation 11
       rect:
         serializedVersion: 2
-        x: 65
-        y: 97
-        width: 31
-        height: 26
+        x: 64
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3011,13 +3026,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_118
+      name: tree animation 12
       rect:
         serializedVersion: 2
-        x: 97
-        y: 97
-        width: 31
-        height: 28
+        x: 96
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3032,13 +3047,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_119
+      name: tree animation 13
       rect:
         serializedVersion: 2
-        x: 129
-        y: 97
-        width: 31
-        height: 31
+        x: 128
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3053,13 +3068,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_120
+      name: tree animation 14
       rect:
         serializedVersion: 2
         x: 160
-        y: 97
-        width: 33
-        height: 31
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3074,13 +3089,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_121
+      name: tree animation 15
       rect:
         serializedVersion: 2
-        x: 193
-        y: 97
-        width: 31
-        height: 31
+        x: 192
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3095,13 +3110,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_122
+      name: tree animation 16
       rect:
         serializedVersion: 2
         x: 224
-        y: 97
-        width: 64
-        height: 31
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3552,6 +3567,111 @@ TextureImporter:
       bones: []
       spriteID: 8c8e7c97a5ccbfd30800000000000000
       internalID: 4466388144430246088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leaf effect 1
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 272
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ead470cb902592140800000000000000
+      internalID: 4695374288273231278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leaf effect 3
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 272
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 082fba2c24b485250800000000000000
+      internalID: 5933575259166601856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leaf effect 4
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 272
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1714e66f5a5c6c050800000000000000
+      internalID: 5820556885017641329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree animation 3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be52acffcc7077c0800000000000000
+      internalID: -4075620430031724872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree animation 17
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8db5794cc6567f80800000000000000
+      internalID: -8109198643628229234
       vertices: []
       indices: 
       edges: []
